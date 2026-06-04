@@ -40,7 +40,6 @@
             }
         }
     </script>
-    <!-- Init Dark Mode -->
     <script>
         if (localStorage.getItem('hospital_theme') === 'dark' || (!('hospital_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -51,12 +50,10 @@
 </head>
 <body class="text-pastel-text dark:text-gray-200 min-h-screen flex flex-col antialiased bg-[#f4f7f9] dark:bg-gray-900 transition-colors duration-300">
 
-    <!-- Navigation Bar -->
     <nav class="glass-nav border-b border-gray-200 dark:border-gray-800 sticky top-0 z-40 shadow-sm hidden transition-colors duration-300" id="main-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 
-                <!-- Logo & Desktop Menu -->
                 <div class="flex items-center gap-8">
                     <div class="flex-shrink-0 flex items-center gap-2.5">
                         <div class="w-8 h-8 rounded-lg bg-pastel-primary/10 dark:bg-pastel-primary/20 flex items-center justify-center">
@@ -65,39 +62,31 @@
                         <span class="font-semibold text-lg tracking-wide hidden sm:block dark:text-gray-100">IT Support Log</span>
                     </div>
                     
-                    <!-- Desktop Links -->
                     <div class="hidden md:flex items-center gap-2 bg-gray-50/50 dark:bg-gray-800/50 p-1 rounded-xl border border-gray-100 dark:border-gray-700" id="nav-links-desktop">
-                        <!-- JS Inject -->
-                    </div>
+                        </div>
                 </div>
 
-                <!-- Right Side Tools (Notifications & Profile) -->
                 <div class="flex items-center gap-3 md:gap-5">
 
-                    <!-- Dark Mode Toggle -->
                     <button onclick="app.toggleTheme()" class="p-2 text-gray-500 hover:text-pastel-primary dark:text-gray-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition relative mr-1" title="สลับโหมดหน้าจอ">
                         <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                         <svg class="w-5 h-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                     </button>
                     
-                    <!-- Notification Bell -->
                     <div class="relative hidden" id="nav-notifications">
                         <button onclick="app.toggleNotifications(event)" class="p-2 text-gray-500 hover:text-pastel-primary dark:text-gray-400 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition relative">
                             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
                             <span id="notif-badge" class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-red-500 rounded-full hidden border-2 border-white dark:border-gray-900"></span>
                         </button>
-                        <!-- Notif Dropdown -->
                         <div id="notif-dropdown" class="absolute right-0 mt-2 w-72 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hidden flex-col max-h-80 overflow-hidden z-50 transition-colors">
                             <div class="p-3 border-b border-gray-100 dark:border-gray-700 font-medium text-sm flex justify-between items-center bg-gray-50 dark:bg-gray-800/50">
                                 การแจ้งเตือน <button onclick="app.clearNotifications()" class="text-xs text-pastel-primary dark:text-pastel-light hover:underline">ล้างทั้งหมด</button>
                             </div>
                             <div id="notif-list" class="overflow-y-auto grow p-2 space-y-1 bg-white dark:bg-gray-800 text-sm">
-                                <!-- JS Injected -->
-                            </div>
+                                </div>
                         </div>
                     </div>
 
-                    <!-- User Menu -->
                     <div class="flex items-center gap-3 border-l border-gray-200 dark:border-gray-700 pl-4">
                         <div class="hidden sm:block text-right">
                             <div id="nav-fullname" class="text-sm font-medium text-gray-700 dark:text-gray-200">Name</div>
@@ -111,17 +100,13 @@
                 </div>
             </div>
             
-            <!-- Mobile Menu Links -->
             <div class="md:hidden border-t border-gray-100 dark:border-gray-800 flex overflow-x-auto pb-3 pt-3 gap-2 px-2" id="nav-links-mobile">
-                <!-- JS Inject -->
-            </div>
+                </div>
         </div>
     </nav>
 
-    <!-- Main Content Area -->
     <main class="flex-grow flex flex-col w-full max-w-7xl mx-auto p-4 sm:p-6 lg:p-8" id="main-content">
         
-        <!-- 1. LOGIN / REGISTER VIEW -->
         <div id="view-auth" class="flex-grow flex-col justify-center items-center h-[80vh] hidden">
             <div class="w-full max-w-sm bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300">
                 <div class="p-6 sm:p-8 space-y-6">
@@ -160,7 +145,6 @@
             </div>
         </div>
 
-        <!-- 2. DASHBOARD VIEW -->
         <div id="view-dashboard" class="hidden w-full space-y-6">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white dark:bg-gray-800 p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-colors">
                 <div>
@@ -173,7 +157,6 @@
                 </button>
             </div>
 
-            <!-- Admin Stats -->
             <div id="dashboard-admin-stats" class="hidden grid-cols-1 sm:grid-cols-3 gap-4">
                 <div class="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow-sm border border-pastel-dark/30 dark:border-pastel-primary/30 flex flex-col justify-between cursor-pointer hover:bg-pastel-light/50 dark:hover:bg-gray-700 transition relative group" onclick="app.switchView('users')">
                     <div class="flex items-center justify-between mb-4">
@@ -213,8 +196,7 @@
                         <div class="w-full sm:w-56">
                             <label class="block text-[10px] font-semibold text-gray-400 dark:text-gray-500 mb-1 uppercase tracking-wider">สัปดาห์ฝึกงาน</label>
                             <select id="filter-week" onchange="app.renderDashboard()" class="w-full px-3 py-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg text-sm focus:ring-1 focus:ring-pastel-primary outline-none transition text-gray-600 dark:text-gray-200">
-                                <!-- JS Inject -->
-                            </select>
+                                </select>
                         </div>
                     </div>
                     <div class="w-full md:w-72 md:ml-auto">
@@ -247,9 +229,7 @@
             </div>
         </div>
 
-        <!-- 3. USER MANAGEMENT VIEW (Admin Only) -->
         <div id="view-users" class="hidden w-full space-y-6">
-            <!-- Breadcrumb Navigation -->
             <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
                 <button onclick="app.switchView('dashboard')" class="hover:text-pastel-primary dark:hover:text-pastel-light transition flex items-center gap-1">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg> แดชบอร์ด
@@ -270,31 +250,23 @@
             </div>
             
             <div id="users-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- JS Injected User Cards -->
-            </div>
+                </div>
         </div>
 
-        <!-- 4. PROFILE / HISTORY VIEW (Student Only) -->
         <div id="view-profile" class="hidden w-full space-y-6">
-            <!-- Profile Header Card (Banner + Avatar) -->
             <div class="bg-pastel-primary dark:bg-gray-800 text-white p-6 md:p-8 rounded-2xl shadow-sm relative overflow-hidden h-auto min-h-[220px] flex items-end border dark:border-gray-700">
-                <!-- Inner Blurred Layer -->
                 <div id="profile-banner-layer" class="absolute inset-0 z-0 bg-cover bg-center transition-all duration-500"></div>
-                <!-- Dark Overlay to ensure text readability -->
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-0"></div>
 
-                <!-- Admin background shape (fallback if no banner) -->
                 <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none" id="profile-banner-fallback-icon">
                     <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
                 </div>
                 
-                <!-- Edit Profile Button -->
                 <button onclick="app.openProfileModal()" class="absolute top-4 right-4 bg-black/30 hover:bg-black/50 text-white p-2.5 rounded-full backdrop-blur-md transition z-20 shadow-sm border border-white/20" title="แก้ไขโปรไฟล์">
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                 </button>
 
                 <div class="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-6 w-full mt-4 md:mt-0">
-                    <!-- Avatar -->
                     <div class="w-28 h-28 bg-white/20 dark:bg-gray-800/50 rounded-full flex items-center justify-center text-5xl font-bold border-4 border-white/50 backdrop-blur-sm shadow-lg overflow-hidden bg-cover-center shrink-0" id="profile-avatar">
                         U
                     </div>
@@ -316,7 +288,6 @@
                 </div>
             </div>
             
-            <!-- Personal Info Card -->
             <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden relative transition-colors">
                 <div class="p-5 border-b border-gray-100 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-900/50 flex items-center gap-2">
                     <svg class="w-5 h-5 text-pastel-primary dark:text-pastel-light" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
@@ -342,7 +313,6 @@
                 </div>
             </div>
 
-            <!-- Work History Card -->
             <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden transition-colors">
                 <div class="p-5 border-b border-gray-100 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-900/50 flex items-center gap-2">
                     <svg class="w-5 h-5 text-pastel-primary dark:text-pastel-light" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
@@ -366,9 +336,6 @@
 
     </main>
 
-    <!-- ================= MODALS ================= -->
-    
-    <!-- 1. Task Record Modal -->
     <div id="record-modal" class="fixed inset-0 bg-gray-900/50 dark:bg-black/70 backdrop-blur-[2px] z-50 items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl w-full max-w-2xl overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]" id="record-modal-content">
             <div class="px-6 py-5 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50 shrink-0">
@@ -379,7 +346,6 @@
             <div class="p-6 md:p-8 space-y-6 overflow-y-auto grow custom-scrollbar bg-white dark:bg-gray-800">
                 <input type="hidden" id="form-id">
                 
-                <!-- Section 1: Info -->
                 <div class="border border-gray-100 dark:border-gray-700 p-5 rounded-xl bg-gray-50/30 dark:bg-gray-900/50">
                     <h4 class="font-semibold text-gray-700 dark:text-gray-200 text-sm mb-4 flex items-center gap-2">
                         <svg class="w-4 h-4 text-pastel-primary dark:text-pastel-light" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> ข้อมูลการแจ้งซ่อม
@@ -410,7 +376,6 @@
                     </div>
                 </div>
 
-                <!-- Section 2: Action -->
                 <div class="border border-pastel-DEFAULT dark:border-pastel-primary/30 p-5 rounded-xl bg-pastel-light/30 dark:bg-pastel-primary/10">
                     <h4 class="font-semibold text-pastel-primary dark:text-pastel-light text-sm mb-4 flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg> การดำเนินการของผู้ปฏิบัติงาน
@@ -418,18 +383,14 @@
                     
                     <div class="mb-4">
                         <label class="block text-[11px] font-semibold text-gray-500 dark:text-gray-400 mb-1.5 uppercase tracking-wider">ทีมงานที่รับผิดชอบ</label>
-                        <!-- Container สำหรับแสดงรายชื่อคนรับงานแบบป้าย (Tags) -->
                         <div id="staff-tags-container" class="min-h-[42px] px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg flex flex-wrap gap-2 items-center">
-                            <!-- JS Inject Tags -->
-                        </div>
+                            </div>
                     </div>
 
-                    <!-- NEW: Select Co-workers -->
                     <div class="mb-4 hidden" id="coworker-selection-group">
                         <label class="block text-[11px] font-semibold text-gray-500 dark:text-gray-400 mb-1.5 uppercase tracking-wider">เพิ่มผู้ร่วมปฏิบัติงาน</label>
                         <div id="coworker-checkboxes" class="flex flex-wrap gap-2">
-                            <!-- Checkboxes injected here -->
-                        </div>
+                            </div>
                     </div>
 
                     <div>
@@ -438,7 +399,6 @@
                         <p class="text-[10px] text-gray-400 dark:text-gray-500 mt-1.5" id="help-resolution">หากเพิ่งกดรับงาน ยังไม่ต้องกรอกช่องนี้ (สถานะจะเป็น "กำลังทำ")</p>
                     </div>
 
-                    <!-- Image Upload for Task Resolution -->
                     <div id="resolution-img-section" class="border-t border-gray-100 dark:border-gray-700 pt-4 mt-4 hidden">
                         <label class="block text-[11px] font-semibold text-gray-500 dark:text-gray-400 mb-2 uppercase">แนบรูปภาพยืนยันการปฏิบัติงาน <span class="text-xs font-normal text-gray-400 dark:text-gray-500">(ถ้ามี)</span></label>
                         <input type="file" id="form-resolution-img-input" accept="image/*" class="w-full text-sm text-gray-500 dark:text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-white dark:file:bg-gray-800 file:border file:border-gray-200 dark:file:border-gray-700 dark:file:text-gray-300 hover:file:bg-gray-50 dark:hover:file:bg-gray-700 cursor-pointer outline-none" onchange="app.handleTaskImageUpload(event)">
@@ -456,13 +416,11 @@
             <div class="px-6 py-4 bg-gray-50 dark:bg-gray-900/80 border-t border-gray-100 dark:border-gray-700 flex flex-col-reverse sm:flex-row justify-end gap-3 shrink-0">
                 <button onclick="app.closeModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm">ปิดหน้าต่าง</button>
                 <button id="btn-modal-save" onclick="app.saveRecord()" class="w-full sm:w-auto px-5 py-2.5 bg-pastel-primary text-white rounded-xl text-sm font-medium hover:bg-pastel-hover transition shadow-sm flex justify-center items-center gap-2">
-                    <!-- Text changes dynamically -->
-                </button>
+                    </button>
             </div>
         </div>
     </div>
 
-    <!-- 2. Admin View User History Modal -->
     <div id="history-modal" class="fixed inset-0 bg-gray-900/50 dark:bg-black/70 backdrop-blur-[2px] z-50 items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl w-full max-w-4xl overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col max-h-[85vh]" id="history-modal-content">
             <div class="px-6 py-5 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50 shrink-0">
@@ -496,7 +454,6 @@
         </div>
     </div>
 
-    <!-- 3. Edit User Modal (Admin) -->
     <div id="user-modal" class="fixed inset-0 bg-gray-900/50 dark:bg-black/70 backdrop-blur-[2px] z-50 items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col" id="user-modal-content">
             <div class="px-6 py-5 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50 shrink-0">
@@ -533,7 +490,6 @@
         </div>
     </div>
 
-    <!-- 4. Edit Personal Profile Modal (Student) -->
     <div id="profile-edit-modal" class="fixed inset-0 bg-gray-900/50 dark:bg-black/70 backdrop-blur-[2px] z-50 items-center justify-center hidden opacity-0 transition-opacity duration-300 p-4">
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]" id="profile-edit-modal-content">
             <div class="px-6 py-5 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50 shrink-0">
@@ -545,7 +501,6 @@
             </div>
             <div class="p-6 md:p-8 space-y-5 overflow-y-auto grow custom-scrollbar bg-white dark:bg-gray-800">
                 
-                <!-- Images Edit Section -->
                 <div class="border border-gray-100 dark:border-gray-700 p-5 rounded-xl bg-gray-50/50 dark:bg-gray-900/50">
                     <h4 class="font-semibold text-gray-700 dark:text-gray-200 text-sm mb-4">รูปภาพและหน้าปก</h4>
                     <div class="space-y-4">
@@ -567,7 +522,6 @@
                     </div>
                 </div>
 
-                <!-- Info Edit Section -->
                 <div class="border border-gray-100 dark:border-gray-700 p-5 rounded-xl bg-white dark:bg-gray-800">
                     <h4 class="font-semibold text-gray-700 dark:text-gray-200 text-sm mb-4">ข้อมูลส่วนตัวเพิ่มเติม</h4>
                     <div class="space-y-4">
@@ -603,13 +557,11 @@
         </div>
     </div>
 
-    <!-- Image Viewer Modal (Full Screen) -->
     <div id="image-viewer-modal" class="fixed inset-0 bg-black/90 z-[60] hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="app.closeImageViewer()">
         <img id="image-viewer-img" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-zoom-out" src="">
         <button class="absolute top-4 right-4 text-white hover:text-red-400 bg-black/50 rounded-full p-2"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
     </div>
 
-    <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-6 right-6 bg-gray-800 shadow-xl rounded-xl px-5 py-3.5 transform translate-y-24 opacity-0 transition-all duration-300 z-50 flex items-center gap-3 pointer-events-none">
         <div class="bg-green-500/20 p-1 rounded-full"><svg class="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
         <span id="toast-text" class="text-white text-sm font-medium tracking-wide">Success</span>
@@ -666,6 +618,17 @@
                 
                 this.fetchData();
 
+                // 🌟 ระบบ Auto-Refresh ดึงข้อมูลใหม่ทุกๆ 10 วินาทีแบบเงียบๆ
+                setInterval(() => {
+                    // จะดึงข้อมูลก็ต่อเมื่อผู้ใช้ไม่ได้เปิดหน้าต่าง Modal ค้างไว้อยู่ (ป้องกันหน้าจอกระตุกตอนพิมพ์)
+                    const isAnyModalOpen = ['record-modal', 'history-modal', 'user-modal', 'profile-edit-modal']
+                        .some(id => document.getElementById(id).classList.contains('flex'));
+                    
+                    if (this.state.currentUser && !isAnyModalOpen) {
+                        this.fetchData();
+                    }
+                }, 10000); // 10000 ms = 10 วินาที
+
                 // กด Enter เพื่อเข้าสู่ระบบ
                 ['auth-username', 'auth-password', 'auth-fullname'].forEach(id => {
                     const el = document.getElementById(id);
@@ -694,7 +657,11 @@
             async fetchData() {
                 if (!this.state.googleAppScriptUrl) return; 
                 try {
-                    const res = await fetch(this.state.googleAppScriptUrl + '?action=getData');
+                    // 🌟 Cache-Buster: แนบเวลาเสี้ยววินาทีไปกับ URL เพื่อแก้ปัญหา Google จำข้อมูลเก่าตอน Refresh
+                    const timestamp = new Date().getTime();
+                    const url = `${this.state.googleAppScriptUrl}?action=getData&t=${timestamp}`;
+                    
+                    const res = await fetch(url);
                     const data = await res.json();
                     if(data.status === 'success') {
                         if (data.users?.length) {
@@ -824,9 +791,12 @@
                             });
                             this.saveToLocal();
                         }
-                        // Refresh UI silently if logged in
+                        
+                        // 🌟 รีเฟรชหน้าจอแบบเจาะจงเพื่อลดการกระตุก
                         if (this.state.currentView !== 'auth') {
-                            this.switchView(this.state.currentView); 
+                            if (this.state.currentView === 'dashboard') this.renderDashboard();
+                            else if (this.state.currentView === 'users') this.renderUsers();
+                            else if (this.state.currentView === 'profile') this.renderProfile();
                         }
                     }
                 } catch(e) { console.error('Sheet fetch error:', e); }
@@ -1220,16 +1190,13 @@
 
                     gridContainer.innerHTML += `
                         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col hover:shadow-md transition-shadow duration-300">
-                            <!-- Banner Header -->
                             <div class="h-24 relative overflow-hidden bg-pastel-light dark:bg-gray-900">
                                 ${bannerHTML}
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-0"></div>
                                 <div class="absolute top-3 right-3 z-10">${roleBadge}</div>
                             </div>
                             
-                            <!-- Profile Body -->
                             <div class="px-5 pb-5 relative flex-grow flex flex-col">
-                                <!-- Avatar -->
                                 <div class="w-16 h-16 rounded-full border-4 border-white dark:border-gray-800 bg-pastel-DEFAULT dark:bg-pastel-primary/30 text-pastel-primary dark:text-pastel-light shadow-md absolute -top-8 left-5 bg-cover bg-center flex items-center justify-center text-2xl font-bold z-10" style="${avatarStyle}">
                                     ${avatarContent}
                                 </div>
@@ -1246,7 +1213,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Actions -->
                                 <div class="mt-auto pt-3 border-t border-gray-100 dark:border-gray-700 flex gap-2">
                                     ${btnHistory}
                                     <button onclick="app.openUserModal('${u.username}')" class="p-2.5 text-pastel-primary bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition shadow-sm" title="แก้ไขข้อมูลผู้ใช้"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg></button>
